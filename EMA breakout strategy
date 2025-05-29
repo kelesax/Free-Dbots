@@ -1,0 +1,47 @@
+📄 XML Code
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<bot>
+  <strategy>
+    <name>EMA Breakout Strategy</name>
+    <description>Trades on price crossing EMA 20 on Volatility Index 100</description>
+    <parameters>
+      <stake>1</stake>
+      <duration>5</duration>
+      <duration_unit>ticks</duration_unit>
+      <symbol>R_100</symbol>
+      <trade_type>rise_fall</trade_type>
+    </parameters>
+    <indicators>
+      <indicator>
+        <type>ema</type>
+        <period>20</period>
+        <field>close</field>
+      </indicator>
+    </indicators>
+    <conditions>
+      <condition>
+        <type>cross_over</type>
+        <field>close</field>
+        <indicator>ema</indicator>
+        <action>buy</action>
+      </condition>
+      <condition>
+        <type>cross_under</type>
+        <field>close</field>
+        <indicator>ema</indicator>
+        <action>sell</action>
+      </condition>
+    </conditions>
+  </strategy>
+</bot>
+```
+
+---
+
+⚠️ Important Notes
+
+- *Customization*: This is a basic template. Depending on your specific requirements, you might need to add more blocks or adjust existing ones within the DBot platform.
+
+- *Testing*: Before deploying the bot with real funds, it's advisable to test it in a demo account to ensure it behaves as expected.
