@@ -395,25 +395,17 @@
                   </block>
                 </statement>
                 <statement name="ELSE">
-                  <block type="text_print" id="3A$xnjUB)LKwKaFCp}~D">
-                    <value name="TEXT">
-                      <shadow type="text" id="kqlrIk.GO.^}hI,PoUV)">
-                        <field name="TEXT">abc</field>
-                      </shadow>
-                      <block type="text_join" id="t${9^A*g2PUV`Z8){*$d">
-                        <mutation items="2"></mutation>
-                        <value name="ADD0">
-                          <block type="text" id="#r|s$$l{nDMieG8N~xdr">
-                            <field name="TEXT">Seu Lucro</field>
-                          </block>
-                        </value>
-                        <value name="ADD1">
-                          <block type="total_profit" id="7d=h[LW.:~XXY@WWrcV)"></block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </statement>
+  <block type="text_print">
+    <value name="TEXT">
+      <shadow type="text">
+        <field name="TEXT">Target reached! Stopping bot...</field>
+      </shadow>
+    </value>
+    <next>
+      <block type="disable_trading" />
+    </next>
+  </block>
+</statement>
               </block>
             </next>
           </block>
